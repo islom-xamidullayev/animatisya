@@ -1,0 +1,81 @@
+/* sharcha osilgan ipi */
+.ball {
+    border: 1px solid #000;
+    height: 100px;
+    position: absolute;
+  }
+  
+  /* sharchalar */
+  .ball::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    border-radius: 50%;
+    top: 100%;
+    left: -23px;
+  }
+  
+  /* 1-sharchaning ipi */
+  .ball:nth-child(1) {
+    left: 25px;
+    transform-origin: top center;
+    animation: left 1s infinite linear;
+  }
+  
+  /* 2-sharchaning ipi */
+  .ball:nth-child(2) {
+    left: 75px;
+  }
+  
+  /* 3-sharchaning ipi */
+  .ball:nth-child(3) {
+    left: 125px;
+  }
+  
+  /* 4-sharchaning ipi */
+  .ball:nth-child(4) {
+    left: 175px;
+  }
+  
+  /* 5-sharchaning ipi */
+  .ball:nth-child(5) {
+    left: 225px;
+    transform-origin: top center;
+    animation: right 1s infinite linear .5s;
+  }
+  
+  /* mayatnik asosi */
+  .pendulum {
+    width: 250px;
+    height: 100px;
+      /* ELEMENTNI MARKAZGA JOYLAYTIRISH */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    
+    border-top: 3px solid #000;
+  }
+  
+  /* chapdagi sharcha uchun animatsiya */
+  @keyframes left {
+    0%, 50%, 100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(45deg);
+    }
+  }
+  
+  /* o'ngdagi sharcha uchun animatsiya */
+  @keyframes right {
+    0%, 50%, 100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(-45deg);
+    }
+  }
